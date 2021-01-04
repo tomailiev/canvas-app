@@ -1,0 +1,24 @@
+.annotations {
+    position: absolute;
+    top: 50px;
+    z-index: 1000;
+}
+
+.annot-left {
+    left: 0;
+}
+
+.annot-right {
+    left: 500px;
+}
+
+.manuscript {
+    position: absolute;
+    top: 50px;
+}
+
+.edit-controls {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}

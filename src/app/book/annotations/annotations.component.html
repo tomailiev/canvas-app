@@ -1,0 +1,23 @@
+<canvas id="fabric-canvas-{{page.number}}"></canvas>
+<div class="options" *ngIf="!isStatic">
+    <select #option (change)="changeObject(option.value)">
+        <option value="select" selected disabled>Please select an object</option>
+        <option value="circle">circle</option>
+        <option value="square">square</option>
+        <option value="text">text</option>
+    </select>
+    <select #color (change)="changeColor(color.value)">
+        <option value="select" selected disabled>Please select a color</option>
+        <option value="red">red</option>
+        <option value="blue">blue</option>
+        <option value="green">green</option>
+        <option value="yellow">yellow</option>
+        <option value="black">black</option>
+        <option value="white">white</option>
+
+    </select>
+</div>
+<div class="action-buttons" *ngIf="!isStatic">
+    <button (click)="cancelCanvas()">cancel</button>
+    <button (click)="saveCancas()">save</button>
+</div>

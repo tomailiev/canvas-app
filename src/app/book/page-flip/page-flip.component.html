@@ -1,0 +1,17 @@
+<div class="edit-controls">
+    <button id="edit-left" [disabled]="!currentPageNumber || inEdit || isShow" (click)="editLeft()">edit left</button>
+    <button (click)="isShow = !isShow" [disabled]="inEdit">{{isShow? 'hide' : 'show'}} annotations</button>
+    <button id="edit-right" [disabled]="(currentPageNumber >= book.pages.length - 1) || inEdit || isShow"
+        (click)="editRight()">edit
+        right</button>
+</div>
+
+<div class="turn-controls">
+
+</div>
+<div #manuscript class="manuscript"></div>
+<app-annotations class="annotations" [ngClass]="annotClass" *ngIf="inEdit" [page]="currentEditedPage"
+    (done)="switchEditMode()" [isStatic]="false"></app-annotations>
+
+<app-annotations class="annotations annot-left" *ngIf="isShow && !!left" [page]="left" [isStatic]="true"></app-annotations>
+<app-annotations class="annotations annot-right" *ngIf="isShow && !!right" [page]="right" [isStatic]="true"></app-annotations>
