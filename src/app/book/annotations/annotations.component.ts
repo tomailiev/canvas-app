@@ -50,23 +50,27 @@ export class AnnotationsComponent implements AfterViewInit {
           top: options.e.layerY,
           fill: this.color,
           width: 20,
-          height: 20
+          height: 20,
+          stroke: this.color !== 'transparent' ? this.color : 'black',
+          strokeWidth: 0.2
         },
         circle: {
           left: options.e.layerX,
           top: options.e.layerY,
           fill: this.color,
-          radius: 20
+          radius: 20,
+          stroke: this.color !== 'transparent' ? this.color : 'black',
+          strokeWidth: 0.2
         },
         text: {
           fontSize: 20,
           border: this.color,
           left: options.e.layerX,
           top: options.e.layerY,
-          fill: this.color,
+          fill: this.color !== 'transparent' ? this.color : 'black',
         }
       }
-
+      
       this.object = this.objectValue === 'text'
         ? new objects[this.objectValue]('edit me', objectOptions[this.objectValue])
         : new objects[this.objectValue](objectOptions[this.objectValue]);
